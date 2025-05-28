@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ThreagileConverter.CLI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41c2104e5a84a8cd72dd3b2df77a726a3c55e6ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe7ea3332f1a0fc29bbda7c20238085a5a53175c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ThreagileConverter.CLI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ThreagileConverter.CLI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -399,6 +399,36 @@ public class ThreagileStyle
     public string Shape { get; set; } = string.Empty;
 
     /// <summary>
+    /// Gets or sets the rounded property (0 or 1)
+    /// </summary>
+    public int Rounded { get; set; } = 0;
+
+    /// <summary>
+    /// Gets or sets the white space property (wrap, nowrap, etc.)
+    /// </summary>
+    public string WhiteSpace { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Gets or sets the HTML property (0 or 1)
+    /// </summary>
+    public int Html { get; set; } = 0;
+
+    /// <summary>
+    /// Gets or sets the bounded label property (0 or 1)
+    /// </summary>
+    public int BoundedLbl { get; set; } = 0;
+
+    /// <summary>
+    /// Gets or sets the background outline property (0 or 1)
+    /// </summary>
+    public int BackgroundOutline { get; set; } = 0;
+
+    /// <summary>
+    /// Gets or sets the size property (for certain shapes like cylinder)
+    /// </summary>
+    public int Size { get; set; } = 0;
+
+    /// <summary>
     /// Gets or sets the properties of the style
     /// </summary>
     public Dictionary<string, string> Properties { get; set; } = new();

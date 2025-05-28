@@ -10,7 +10,7 @@ namespace ThreagileConverter.Core.Exceptions
         /// <summary>
         /// Gets the output file path that caused the generation error
         /// </summary>
-        public string FilePath { get; }
+        public string FilePath { get; } = string.Empty;
 
         /// <summary>
         /// Gets the generation error type

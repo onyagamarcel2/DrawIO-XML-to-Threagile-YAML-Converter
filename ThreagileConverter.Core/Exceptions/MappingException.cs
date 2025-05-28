@@ -15,7 +15,7 @@ namespace ThreagileConverter.Core.Exceptions
         /// <summary>
         /// Gets the source object ID that caused the mapping error
         /// </summary>
-        public string SourceId { get; }
+        public string SourceId { get; } = string.Empty;
 
         /// <summary>
         /// Creates a new instance of MappingException

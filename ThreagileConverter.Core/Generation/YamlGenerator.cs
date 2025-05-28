@@ -755,6 +755,18 @@ public class YamlStyleConverter : IYamlTypeConverter
                 style.FontSize = size;
             if (properties.TryGetValue("shape", out var shape))
                 style.Shape = shape;
+            if (properties.TryGetValue("rounded", out var rounded) && int.TryParse(rounded, out var roundedValue))
+                style.Rounded = roundedValue;
+            if (properties.TryGetValue("whiteSpace", out var whiteSpace))
+                style.WhiteSpace = whiteSpace;
+            if (properties.TryGetValue("html", out var html) && int.TryParse(html, out var htmlValue))
+                style.Html = htmlValue;
+            if (properties.TryGetValue("boundedLbl", out var boundedLbl) && int.TryParse(boundedLbl, out var boundedLblValue))
+                style.BoundedLbl = boundedLblValue;
+            if (properties.TryGetValue("backgroundOutline", out var backgroundOutline) && int.TryParse(backgroundOutline, out var backgroundOutlineValue))
+                style.BackgroundOutline = backgroundOutlineValue;
+            if (properties.TryGetValue("size", out var sizeStr) && int.TryParse(sizeStr, out var sizeValue))
+                style.Size = sizeValue;
             style.Properties = properties;
         }
         return style;
@@ -780,6 +792,37 @@ public class YamlStyleConverter : IYamlTypeConverter
                 ["fontSize"] = style.FontSize.ToString(),
                 ["shape"] = style.Shape
             };
+            
+            if (style.Rounded != 0)
+            {
+                dict["rounded"] = style.Rounded.ToString();
+            }
+            
+            if (!string.IsNullOrEmpty(style.WhiteSpace))
+            {
+                dict["whiteSpace"] = style.WhiteSpace;
+            }
+            
+            if (style.Html != 0)
+            {
+                dict["html"] = style.Html.ToString();
+            }
+            
+            if (style.BoundedLbl != 0)
+            {
+                dict["boundedLbl"] = style.BoundedLbl.ToString();
+            }
+            
+            if (style.BackgroundOutline != 0)
+            {
+                dict["backgroundOutline"] = style.BackgroundOutline.ToString();
+            }
+            
+            if (style.Size != 0)
+            {
+                dict["size"] = style.Size.ToString();
+            }
+            
             foreach (var prop in style.Properties)
             {
                 dict[prop.Key] = prop.Value;

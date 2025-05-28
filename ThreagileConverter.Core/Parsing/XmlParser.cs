@@ -505,8 +505,8 @@ public class ValidationResult
 
 public class ExternalReference
 {
-    public XElement SourceElement { get; set; }
-    public string ReferencePath { get; set; }
+    public XElement SourceElement { get; set; } = new XElement("placeholder");
+    public string ReferencePath { get; set; } = string.Empty;
     public ExternalReferenceType ReferenceType { get; set; }
 }
 

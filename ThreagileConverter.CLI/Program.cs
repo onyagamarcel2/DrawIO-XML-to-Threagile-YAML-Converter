@@ -37,6 +37,7 @@ class Program
                 services.AddTransient<IDrawIOParser, DrawIOParser>();
                 services.AddTransient<IMapper, Mapper>();
                 services.AddTransient<IYamlGenerator, YamlGenerator>();
+                services.AddTransient<ThreatReportGenerator>();
             })
             .Build();
 
@@ -60,21 +61,32 @@ class Program
             aliases: new[] { "--validate-output" },
             description: "Valider le fichier YAML généré",
             getDefaultValue: () => true);
+            
+        var generateReportOption = new Option<bool>(
+            aliases: new[] { "--generate-report", "-r" },
+            description: "Générer un rapport d'analyse de menaces",
+            getDefaultValue: () => true);
+            
+        var reportOutputOption = new Option<string>(
+            aliases: new[] { "--report-output", "-ro" },
+            description: "Chemin du rapport d'analyse de menaces (par défaut: [output].md)");
         
         rootCommand.AddOption(inputOption);
         rootCommand.AddOption(outputOption);
         rootCommand.AddOption(validateInputOption);
         rootCommand.AddOption(validateOutputOption);
+        rootCommand.AddOption(generateReportOption);
+        rootCommand.AddOption(reportOutputOption);
         
-        rootCommand.SetHandler(async (string input, string output, bool validateInput, bool validateOutput) =>
+        rootCommand.SetHandler(async (string input, string output, bool validateInput, bool validateOutput, bool generateReport, string reportOutput) =>
         {
-            await ConvertAsync(host, input, output, validateInput, validateOutput);
-        }, inputOption, outputOption, validateInputOption, validateOutputOption);
+            await ConvertAsync(host, input, output, validateInput, validateOutput, generateReport, reportOutput);
+        }, inputOption, outputOption, validateInputOption, validateOutputOption, generateReportOption, reportOutputOption);
         
         return await rootCommand.InvokeAsync(args);
     }
 
-    private static async Task ConvertAsync(IHost host, string inputPath, string outputPath, bool validateInput, bool validateOutput)
+    private static async Task ConvertAsync(IHost host, string inputPath, string outputPath, bool validateInput, bool validateOutput, bool generateReport, string reportOutputPath)
     {
         var logger = host.Services.GetRequiredService<ILogger<Program>>();
         var config = host.Services.GetRequiredService<AppConfiguration>();
@@ -123,6 +135,20 @@ class Program
             logger.LogInformation("Génération du fichier YAML: {OutputPath}", outputPath);
             var generator = host.Services.GetRequiredService<IYamlGenerator>();
             generator.GenerateYamlToFile(threagileModel, outputPath);
+            
+            // Générer le rapport d'analyse de menaces si demandé
+            if (generateReport)
+            {
+                // Si le chemin du rapport n'est pas spécifié, utiliser le chemin du fichier YAML avec l'extension .md
+                if (string.IsNullOrEmpty(reportOutputPath))
+                {
+                    reportOutputPath = Path.ChangeExtension(outputPath, ".md");
+                }
+                
+                logger.LogInformation("Génération du rapport d'analyse de menaces: {ReportOutputPath}", reportOutputPath);
+                var reportGenerator = host.Services.GetRequiredService<ThreatReportGenerator>();
+                await reportGenerator.GenerateReportAsync(threagileModel, reportOutputPath);
+            }
             
             logger.LogInformation("Conversion terminée avec succès");
         }

@@ -85,9 +85,9 @@ public class Mapper : IMapper
             };
 
             // Add default confidentiality, integrity, and availability values
-            asset.Properties["confidentiality"] = "medium";
-            asset.Properties["integrity"] = "medium";
-            asset.Properties["availability"] = "medium";
+            asset.Properties["confidentiality"] = DetermineConfidentiality(shape);
+            asset.Properties["integrity"] = DetermineIntegrity(shape);
+            asset.Properties["availability"] = DetermineAvailability(shape);
 
             model.TechnicalAssets.Add(asset);
 
@@ -111,8 +111,8 @@ public class Mapper : IMapper
                 Type = DetermineLinkType(relation),
                 Protocol = DetermineLinkProtocol(relation),
                 Authentication = DetermineLinkAuthentication(relation),
-                Authorization = "none",
-                Encryption = "none",
+                Authorization = DetermineLinkAuthorization(relation),
+                Encryption = DetermineLinkEncryption(relation),
                 Properties = new Dictionary<string, string>(relation.Style.Properties)
             };
             model.CommunicationLinks.Add(link);
@@ -121,6 +121,11 @@ public class Mapper : IMapper
         // Create data assets for databases
         CreateDataAssetsForDatabases(model);
 
+        // Analyze threats and enrich the model
+        var threatAnalyzer = new ThreatAnalyzer();
+        model = threatAnalyzer.AnalyzeThreats(model);
+
+        await Task.CompletedTask;
         return model;
     }
 
@@ -188,6 +193,48 @@ public class Mapper : IMapper
     /// <returns>The converted Threagile style</returns>
     public ThreagileStyle ConvertStyle(DrawIOStyle style)
     {
+        // Déterminer la valeur de rounded (0 ou 1)
+        int rounded = 0;
+        if (style.Properties.TryGetValue("rounded", out var roundedStr) && int.TryParse(roundedStr, out var roundedValue))
+        {
+            rounded = roundedValue;
+        }
+        
+        // Déterminer la valeur de whiteSpace
+        string whiteSpace = string.Empty;
+        if (style.Properties.TryGetValue("whiteSpace", out var whiteSpaceStr))
+        {
+            whiteSpace = whiteSpaceStr;
+        }
+        
+        // Déterminer la valeur de html (0 ou 1)
+        int html = 0;
+        if (style.Properties.TryGetValue("html", out var htmlStr) && int.TryParse(htmlStr, out var htmlValue))
+        {
+            html = htmlValue;
+        }
+        
+        // Déterminer la valeur de boundedLbl (0 ou 1)
+        int boundedLbl = 0;
+        if (style.Properties.TryGetValue("boundedLbl", out var boundedLblStr) && int.TryParse(boundedLblStr, out var boundedLblValue))
+        {
+            boundedLbl = boundedLblValue;
+        }
+        
+        // Déterminer la valeur de backgroundOutline (0 ou 1)
+        int backgroundOutline = 0;
+        if (style.Properties.TryGetValue("backgroundOutline", out var backgroundOutlineStr) && int.TryParse(backgroundOutlineStr, out var backgroundOutlineValue))
+        {
+            backgroundOutline = backgroundOutlineValue;
+        }
+        
+        // Déterminer la valeur de size
+        int size = 0;
+        if (style.Properties.TryGetValue("size", out var sizeStr) && int.TryParse(sizeStr, out var sizeValue))
+        {
+            size = sizeValue;
+        }
+        
         return new ThreagileStyle
         {
             FillColor = style.FillColor,
@@ -196,6 +243,12 @@ public class Mapper : IMapper
             FontStyle = style.FontStyle,
             FontSize = style.FontSize,
             Shape = style.Shape,
+            Rounded = rounded,
+            WhiteSpace = whiteSpace,
+            Html = html,
+            BoundedLbl = boundedLbl,
+            BackgroundOutline = backgroundOutline,
+            Size = size,
             Properties = new Dictionary<string, string>(style.Properties)
         };
     }
@@ -395,6 +448,30 @@ public class Mapper : IMapper
         return "none";
     }
 
+    private string DetermineLinkAuthorization(DrawIORelation relation)
+    {
+        // Check if the relation has a specific authorization property
+        if (relation.Style.Properties.TryGetValue("authorization", out var explicitAuth))
+        {
+            return explicitAuth;
+        }
+
+        // Default to none
+        return "none";
+    }
+
+    private string DetermineLinkEncryption(DrawIORelation relation)
+    {
+        // Check if the relation has a specific encryption property
+        if (relation.Style.Properties.TryGetValue("encryption", out var explicitEncryption))
+        {
+            return explicitEncryption;
+        }
+
+        // Default to none
+        return "none";
+    }
+
     private string DetermineShapeType(string assetType)
     {
         return assetType.ToLower() switch
@@ -530,5 +607,116 @@ public class Mapper : IMapper
             
             model.DataAssets.Add(dataAsset);
         }
+    }
+
+    private string DetermineConfidentiality(DrawIOShape shape)
+    {
+        // Check if the shape has a specific confidentiality property
+        if (shape.Style.Properties.TryGetValue("confidentiality", out var explicitConfidentiality))
+        {
+            return explicitConfidentiality;
+        }
+
+        // Determine based on shape type and name
+        if (shape.Value?.Contains("Database", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("DB", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Style.Shape == "cylinder3" ||
+            shape.Style.Shape.Contains("cylinder"))
+        {
+            return "high"; // Databases typically contain sensitive data
+        }
+
+        if (shape.Value?.Contains("Auth", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("Login", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("User", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("Account", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            return "high"; // Authentication services handle sensitive credentials
+        }
+
+        if (shape.Value?.Contains("Payment", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("Financial", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("Billing", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            return "high"; // Financial services handle sensitive data
+        }
+
+        if (shape.Value?.Contains("API", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("Gateway", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            return "medium"; // APIs and gateways may handle various data
+        }
+
+        // Default to medium
+        return "medium";
+    }
+
+    private string DetermineIntegrity(DrawIOShape shape)
+    {
+        // Check if the shape has a specific integrity property
+        if (shape.Style.Properties.TryGetValue("integrity", out var explicitIntegrity))
+        {
+            return explicitIntegrity;
+        }
+
+        // Determine based on shape type and name
+        if (shape.Value?.Contains("Database", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("DB", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Style.Shape == "cylinder3" ||
+            shape.Style.Shape.Contains("cylinder"))
+        {
+            return "high"; // Data integrity is crucial for databases
+        }
+
+        if (shape.Value?.Contains("Payment", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("Financial", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("Billing", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            return "high"; // Financial integrity is critical
+        }
+
+        if (shape.Value?.Contains("Auth", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("Login", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            return "high"; // Authentication services require high integrity
+        }
+
+        // Default to medium
+        return "medium";
+    }
+
+    private string DetermineAvailability(DrawIOShape shape)
+    {
+        // Check if the shape has a specific availability property
+        if (shape.Style.Properties.TryGetValue("availability", out var explicitAvailability))
+        {
+            return explicitAvailability;
+        }
+
+        // Determine based on shape type and name
+        if (shape.Value?.Contains("Gateway", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Style.Shape == "rhombus")
+        {
+            return "high"; // Gateways are critical for system access
+        }
+
+        if (shape.Value?.Contains("Auth", StringComparison.OrdinalIgnoreCase) == true ||
+            shape.Value?.Contains("Login", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            return "high"; // Authentication services must be available
+        }
+
+        if (shape.Value?.Contains("API", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            return "high"; // APIs often need high availability
+        }
+
+        if (shape.Value?.Contains("Service", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            return "medium"; // Services typically need decent availability
+        }
+
+        // Default to medium
+        return "medium";
     }
 }

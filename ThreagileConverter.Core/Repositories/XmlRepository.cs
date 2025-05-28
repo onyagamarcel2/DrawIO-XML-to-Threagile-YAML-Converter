@@ -17,7 +17,7 @@ namespace ThreagileConverter.Core.Repositories
     {
         private readonly string _filePath;
         private readonly ILogger<XmlRepository> _logger;
-        private XDocument _document;
+        private XDocument _document = new XDocument(new XElement("root"));
         private readonly SemaphoreSlim _fileLock = new SemaphoreSlim(1, 1);
 
         public XmlRepository(string filePath, ILogger<XmlRepository> logger)

@@ -1,0 +1,28 @@
+# CHECKLIST D'AMÉLIORATION DU CONVERTISSEUR THREAGILE
+
+## PRIORITÉ 1 : CORRECTIONS TECHNIQUES
+1. ✅ Corriger l'erreur de propriété 'rounded' dans la classe ThreagileStyle
+2. ✅ Résoudre les avertissements CS8618 restants (propriétés non-nullable sans initialisation)
+3. ✅ Corriger les avertissements CS1998 pour les méthodes async sans await
+
+## PRIORITÉ 2 : AMÉLIORATIONS FONCTIONNELLES
+4. ✅ Améliorer la détection des types d'actifs techniques basée sur la forme et le style
+5. ✅ Enrichir le mapping des communications avec des types plus précis
+6. ✅ Différencier les valeurs de "title" et "name" dans le modèle généré
+7. ✅ Ajouter des descriptions plus détaillées aux communications
+
+## PRIORITÉ 3 : ENRICHISSEMENTS SÉMANTIQUES
+8. ✅ Ajouter un système d'analyse de risques basique
+9. ✅ Implémenter la détection automatique des niveaux de confidentialité/intégrité/disponibilité
+10. ✅ Ajouter des métadonnées supplémentaires pour la conformité avec Threagile
+
+## PRIORITÉ 4 : DOCUMENTATION ET TESTS
+11. ✅ Documenter le format YAML attendu par Threagile (via le rapport de menaces)
+12. Créer des tests unitaires pour valider la conformité du YAML généré
+13. ✅ Ajouter des exemples de conversion pour différents scénarios
+
+## NOUVELLES AMÉLIORATIONS POSSIBLES
+14. Améliorer le rapport de menaces avec des graphiques et des statistiques
+15. Ajouter une interface graphique pour visualiser les menaces
+16. Intégrer des sources externes de données sur les vulnérabilités (OWASP, CVE, etc.)
+17. ✅ Implémenter un système de suggestions de corrections pour les risques identifiés 

@@ -1,0 +1,955 @@
+﻿title: Complex Architecture
+description: ''
+version: 21.0.0
+author: ''
+technicalAssets:
+- id: frontend
+  name: Frontend Application
+  title: Frontend Application
+  type: web-application
+  description: Frontend Application
+  usage: business
+  style:
+    fillColor: '#dae8fc'
+    strokeColor: '#6c8ebf'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+    rounded: 1
+    whiteSpace: wrap
+    html: 1
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    rounded: 1
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#dae8fc'
+    strokeColor: '#6c8ebf'
+    confidentiality: medium
+    integrity: medium
+    availability: medium
+    threats: 5 potential threats identified
+    threatDetails: See threat analysis for details
+- id: gateway
+  name: API Gateway
+  title: API Gateway
+  type: gateway
+  description: API Gateway
+  usage: business
+  style:
+    fillColor: '#d5e8d4'
+    strokeColor: '#82b366'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+    whiteSpace: wrap
+    html: 1
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#d5e8d4'
+    strokeColor: '#82b366'
+    confidentiality: medium
+    integrity: medium
+    availability: high
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+- id: auth_service
+  name: Authentication Service
+  title: Authentication Service
+  type: service
+  description: Authentication Service
+  usage: business
+  style:
+    fillColor: '#fff2cc'
+    strokeColor: '#d6b656'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#fff2cc'
+    strokeColor: '#d6b656'
+    confidentiality: high
+    integrity: high
+    availability: high
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+- id: user_db
+  name: User Database
+  title: User Database
+  type: database
+  description: User Database
+  usage: business
+  style:
+    fillColor: '#f8cecc'
+    strokeColor: '#b85450'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: cylinder3
+    whiteSpace: wrap
+    html: 1
+    boundedLbl: 1
+    backgroundOutline: 1
+    size: 15
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    shape: cylinder3
+    whiteSpace: wrap
+    html: 1
+    boundedLbl: 1
+    backgroundOutline: 1
+    size: 15
+    fillColor: '#f8cecc'
+    strokeColor: '#b85450'
+    confidentiality: high
+    integrity: high
+    availability: medium
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+- id: product_service
+  name: Product Service
+  title: Product Service
+  type: service
+  description: Product Service
+  usage: business
+  style:
+    fillColor: '#fff2cc'
+    strokeColor: '#d6b656'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#fff2cc'
+    strokeColor: '#d6b656'
+    confidentiality: medium
+    integrity: medium
+    availability: medium
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+- id: product_db
+  name: Product Database
+  title: Product Database
+  type: database
+  description: Product Database
+  usage: business
+  style:
+    fillColor: '#f8cecc'
+    strokeColor: '#b85450'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: cylinder3
+    whiteSpace: wrap
+    html: 1
+    boundedLbl: 1
+    backgroundOutline: 1
+    size: 15
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    shape: cylinder3
+    whiteSpace: wrap
+    html: 1
+    boundedLbl: 1
+    backgroundOutline: 1
+    size: 15
+    fillColor: '#f8cecc'
+    strokeColor: '#b85450'
+    confidentiality: high
+    integrity: high
+    availability: medium
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+- id: payment_service
+  name: Payment Service
+  title: Payment Service
+  type: service
+  description: Payment Service
+  usage: business
+  style:
+    fillColor: '#fff2cc'
+    strokeColor: '#d6b656'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#fff2cc'
+    strokeColor: '#d6b656'
+    confidentiality: high
+    integrity: high
+    availability: medium
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+- id: payment_gateway
+  name: External Payment Gateway
+  title: External Payment Gateway
+  type: gateway
+  description: External Payment Gateway
+  usage: business
+  style:
+    fillColor: '#f5f5f5'
+    strokeColor: '#666666'
+    fontColor: '#333333'
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+    whiteSpace: wrap
+    html: 1
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#f5f5f5'
+    strokeColor: '#666666'
+    fontColor: '#333333'
+    confidentiality: high
+    integrity: high
+    availability: high
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+- id: order_service
+  name: Order Service
+  title: Order Service
+  type: service
+  description: Order Service
+  usage: business
+  style:
+    fillColor: '#fff2cc'
+    strokeColor: '#d6b656'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#fff2cc'
+    strokeColor: '#d6b656'
+    confidentiality: medium
+    integrity: medium
+    availability: medium
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+- id: order_db
+  name: Order Database
+  title: Order Database
+  type: database
+  description: Order Database
+  usage: business
+  style:
+    fillColor: '#f8cecc'
+    strokeColor: '#b85450'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: cylinder3
+    whiteSpace: wrap
+    html: 1
+    boundedLbl: 1
+    backgroundOutline: 1
+    size: 15
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    shape: cylinder3
+    whiteSpace: wrap
+    html: 1
+    boundedLbl: 1
+    backgroundOutline: 1
+    size: 15
+    fillColor: '#f8cecc'
+    strokeColor: '#b85450'
+    confidentiality: high
+    integrity: high
+    availability: medium
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+- id: logging_service
+  name: Logging Service
+  title: Logging Service
+  type: service
+  description: Logging Service
+  usage: business
+  style:
+    fillColor: '#e1d5e7'
+    strokeColor: '#9673a6'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#e1d5e7'
+    strokeColor: '#9673a6'
+    confidentiality: medium
+    integrity: medium
+    availability: medium
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+- id: log_storage
+  name: Log Storage
+  title: Log Storage
+  type: database
+  description: Log Storage
+  usage: business
+  style:
+    fillColor: '#e1d5e7'
+    strokeColor: '#9673a6'
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: cylinder3
+    whiteSpace: wrap
+    html: 1
+    boundedLbl: 1
+    backgroundOutline: 1
+    size: 15
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    shape: cylinder3
+    whiteSpace: wrap
+    html: 1
+    boundedLbl: 1
+    backgroundOutline: 1
+    size: 15
+    fillColor: '#e1d5e7'
+    strokeColor: '#9673a6'
+    confidentiality: high
+    integrity: high
+    availability: medium
+    threats: 4 potential threats identified
+    threatDetails: See threat analysis for details
+trustBoundaries:
+- id: default-boundary
+  title: Default Trust Boundary
+  name: Default Boundary
+  type: network-segment
+  description: Default trust boundary for unassigned assets
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  technicalAssets:
+  - frontend
+  - gateway
+  - auth_service
+  - user_db
+  - product_service
+  - product_db
+  - payment_service
+  - payment_gateway
+  - order_service
+  - order_db
+  - logging_service
+  - log_storage
+  properties: {}
+sharedRuntimes: []
+dataAssets:
+- id: data-user_db
+  name: Data in User Database
+  description: Data stored in User Database
+  type: business-data
+  usage: business
+  origin: internal
+  owner: business
+  quantity: many
+  confidentiality: medium
+  integrity: medium
+  availability: medium
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  properties: {}
+- id: data-product_db
+  name: Data in Product Database
+  description: Data stored in Product Database
+  type: business-data
+  usage: business
+  origin: internal
+  owner: business
+  quantity: many
+  confidentiality: medium
+  integrity: medium
+  availability: medium
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  properties: {}
+- id: data-order_db
+  name: Data in Order Database
+  description: Data stored in Order Database
+  type: business-data
+  usage: business
+  origin: internal
+  owner: business
+  quantity: many
+  confidentiality: medium
+  integrity: medium
+  availability: medium
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  properties: {}
+- id: data-log_storage
+  name: Data in Log Storage
+  description: Data stored in Log Storage
+  type: business-data
+  usage: business
+  origin: internal
+  owner: business
+  quantity: many
+  confidentiality: medium
+  integrity: medium
+  availability: medium
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  properties: {}
+communicationLinks:
+- id: frontend_to_gateway
+  name: HTTPS
+  title: HTTPS
+  description: HTTPS
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: frontend
+  targetId: gateway
+  source: frontend
+  target: gateway
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 1
+    exitY: 0.5
+    exitDx: 0
+    exitDy: 0
+    entryX: 0
+    entryY: 0.5
+    entryDx: 0
+    entryDy: 0
+- id: gateway_to_auth
+  name: JWT Auth
+  title: JWT Auth
+  description: JWT Auth
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: gateway
+  targetId: auth_service
+  source: gateway
+  target: auth_service
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 1
+    exitY: 0.5
+    exitDx: 0
+    exitDy: 0
+    entryX: 0
+    entryY: 0.5
+    entryDx: 0
+    entryDy: 0
+- id: auth_to_userdb
+  name: SQL
+  title: SQL
+  description: SQL
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: auth_service
+  targetId: user_db
+  source: auth_service
+  target: user_db
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 1
+    exitY: 0.5
+    exitDx: 0
+    exitDy: 0
+    entryX: 0
+    entryY: 0.5
+    entryDx: 0
+    entryDy: 0
+    entryPerimeter: 0
+- id: gateway_to_product
+  name: REST API
+  title: REST API
+  description: REST API
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: gateway
+  targetId: product_service
+  source: gateway
+  target: product_service
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 0.5
+    exitY: 1
+    exitDx: 0
+    exitDy: 0
+    entryX: 0.5
+    entryY: 0
+    entryDx: 0
+    entryDy: 0
+- id: product_to_productdb
+  name: SQL
+  title: SQL
+  description: SQL
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: product_service
+  targetId: product_db
+  source: product_service
+  target: product_db
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 0.5
+    exitY: 1
+    exitDx: 0
+    exitDy: 0
+    entryX: 0.5
+    entryY: 0
+    entryDx: 0
+    entryDy: 0
+    entryPerimeter: 0
+- id: gateway_to_order
+  name: REST API
+  title: REST API
+  description: REST API
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: gateway
+  targetId: order_service
+  source: gateway
+  target: order_service
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 0
+    exitY: 1
+    exitDx: 0
+    exitDy: 0
+    entryX: 0.5
+    entryY: 0
+    entryDx: 0
+    entryDy: 0
+- id: order_to_orderdb
+  name: SQL
+  title: SQL
+  description: SQL
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: order_service
+  targetId: order_db
+  source: order_service
+  target: order_db
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 0.5
+    exitY: 1
+    exitDx: 0
+    exitDy: 0
+    entryX: 0.5
+    entryY: 0
+    entryDx: 0
+    entryDy: 0
+    entryPerimeter: 0
+- id: gateway_to_payment
+  name: REST API
+  title: REST API
+  description: REST API
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: gateway
+  targetId: payment_service
+  source: gateway
+  target: payment_service
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 1
+    exitY: 1
+    exitDx: 0
+    exitDy: 0
+    entryX: 0.5
+    entryY: 0
+    entryDx: 0
+    entryDy: 0
+- id: payment_to_extgateway
+  name: HTTPS
+  title: HTTPS
+  description: HTTPS
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: payment_service
+  targetId: payment_gateway
+  source: payment_service
+  target: payment_gateway
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 1
+    exitY: 0.5
+    exitDx: 0
+    exitDy: 0
+    entryX: 0
+    entryY: 0.5
+    entryDx: 0
+    entryDy: 0
+- id: order_to_product
+  name: REST API
+  title: REST API
+  description: REST API
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: order_service
+  targetId: product_service
+  source: order_service
+  target: product_service
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 1
+    exitY: 0.5
+    exitDx: 0
+    exitDy: 0
+    entryX: 0
+    entryY: 0.5
+    entryDx: 0
+    entryDy: 0
+- id: order_to_payment
+  name: REST API
+  title: REST API
+  description: REST API
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: order_service
+  targetId: payment_service
+  source: order_service
+  target: payment_service
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 1
+    exitY: 0.75
+    exitDx: 0
+    exitDy: 0
+    entryX: 0
+    entryY: 0.75
+    entryDx: 0
+    entryDy: 0
+- id: auth_to_logging
+  name: Log Events
+  title: Log Events
+  description: Log Events
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: auth_service
+  targetId: logging_service
+  source: auth_service
+  target: logging_service
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 0.5
+    exitY: 1
+    exitDx: 0
+    exitDy: 0
+    entryX: 0.5
+    entryY: 0
+    entryDx: 0
+    entryDy: 0
+- id: payment_to_logging
+  name: Log Events
+  title: Log Events
+  description: Log Events
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: payment_service
+  targetId: logging_service
+  source: payment_service
+  target: logging_service
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 0.5
+    exitY: 1
+    exitDx: 0
+    exitDy: 0
+    entryX: 0.5
+    entryY: 0
+    entryDx: 0
+    entryDy: 0
+- id: logging_to_storage
+  name: Store Logs
+  title: Store Logs
+  description: Store Logs
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: logging_service
+  targetId: log_storage
+  source: logging_service
+  target: log_storage
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 1
+    exitY: 0.5
+    exitDx: 0
+    exitDy: 0
+    entryX: 0
+    entryY: 0.5
+    entryDx: 0
+    entryDy: 0
+    entryPerimeter: 0
+styles: {}
+properties:
+  threatAnalysis: Threat analysis performed

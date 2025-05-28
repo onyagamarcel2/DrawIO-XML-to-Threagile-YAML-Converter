@@ -131,6 +131,8 @@ public class YamlValidator : IValidator
             }
         }
 
+        await Task.CompletedTask;
+
         if (errors.Count > 0)
         {
             return ValidationResult.CreateFailure(errors);
