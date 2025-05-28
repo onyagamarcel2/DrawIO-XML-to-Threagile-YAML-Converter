@@ -1,0 +1,8 @@
+D:\threagile_converted\convertisseur\ThreagileConverter.Tests\bin\Debug\net8.0\.msCoverageSourceRootsMapping_ThreagileConverter.Tests
+D:\threagile_converted\convertisseur\ThreagileConverter.Tests\bin\Debug\net8.0\CoverletSourceRootsMapping_ThreagileConverter.Tests
+D:\threagile_converted\convertisseur\ThreagileConverter.Tests\obj\Debug\net8.0\ThreagileConverter.Tests.csproj.AssemblyReference.cache
+D:\threagile_converted\convertisseur\ThreagileConverter.Tests\obj\Debug\net8.0\ThreagileConverter.Tests.GeneratedMSBuildEditorConfig.editorconfig
+D:\threagile_converted\convertisseur\ThreagileConverter.Tests\obj\Debug\net8.0\ThreagileConverter.Tests.AssemblyInfoInputs.cache
+D:\threagile_converted\convertisseur\ThreagileConverter.Tests\obj\Debug\net8.0\ThreagileConverter.Tests.AssemblyInfo.cs
+D:\threagile_converted\convertisseur\ThreagileConverter.Tests\obj\Debug\net8.0\ThreagileConverter.Tests.csproj.CoreCompileInputs.cache
+D:\threagile_converted\convertisseur\ThreagileConverter.Tests\obj\Debug\net8.0\ThreagileConverter.Tests.sourcelink.json

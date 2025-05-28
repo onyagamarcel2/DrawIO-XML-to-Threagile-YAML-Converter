@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Définition des types -->
+    <xs:simpleType name="versionType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]+\.[0-9]+\.[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dateTimeType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3}Z"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Éléments de base -->
+    <xs:element name="mxfile">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="diagram" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="mxGraphModel">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="root">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="mxCell" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="id" type="xs:string" use="required"/>
+                                                            <xs:attribute name="parent" type="xs:string"/>
+                                                            <xs:attribute name="value" type="xs:string"/>
+                                                            <xs:attribute name="style" type="xs:string"/>
+                                                            <xs:attribute name="vertex" type="xs:boolean"/>
+                                                            <xs:attribute name="edge" type="xs:boolean"/>
+                                                            <xs:attribute name="source" type="xs:string"/>
+                                                            <xs:attribute name="target" type="xs:string"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                        <xs:attribute name="name" type="xs:string"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="host" type="xs:string" use="required"/>
+            <xs:attribute name="modified" type="dateTimeType" use="required"/>
+            <xs:attribute name="agent" type="xs:string" use="required"/>
+            <xs:attribute name="version" type="versionType" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema> 

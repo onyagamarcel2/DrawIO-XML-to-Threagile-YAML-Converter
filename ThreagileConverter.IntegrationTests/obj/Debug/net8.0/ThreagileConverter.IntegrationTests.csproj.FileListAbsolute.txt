@@ -1,0 +1,8 @@
+D:\threagile_converted\convertisseur\ThreagileConverter.IntegrationTests\bin\Debug\net8.0\.msCoverageSourceRootsMapping_ThreagileConverter.IntegrationTests
+D:\threagile_converted\convertisseur\ThreagileConverter.IntegrationTests\bin\Debug\net8.0\CoverletSourceRootsMapping_ThreagileConverter.IntegrationTests
+D:\threagile_converted\convertisseur\ThreagileConverter.IntegrationTests\obj\Debug\net8.0\ThreagileConverter.IntegrationTests.csproj.AssemblyReference.cache
+D:\threagile_converted\convertisseur\ThreagileConverter.IntegrationTests\obj\Debug\net8.0\ThreagileConverter.IntegrationTests.GeneratedMSBuildEditorConfig.editorconfig
+D:\threagile_converted\convertisseur\ThreagileConverter.IntegrationTests\obj\Debug\net8.0\ThreagileConverter.IntegrationTests.AssemblyInfoInputs.cache
+D:\threagile_converted\convertisseur\ThreagileConverter.IntegrationTests\obj\Debug\net8.0\ThreagileConverter.IntegrationTests.AssemblyInfo.cs
+D:\threagile_converted\convertisseur\ThreagileConverter.IntegrationTests\obj\Debug\net8.0\ThreagileConverter.IntegrationTests.csproj.CoreCompileInputs.cache
+D:\threagile_converted\convertisseur\ThreagileConverter.IntegrationTests\obj\Debug\net8.0\ThreagileConverter.IntegrationTests.sourcelink.json

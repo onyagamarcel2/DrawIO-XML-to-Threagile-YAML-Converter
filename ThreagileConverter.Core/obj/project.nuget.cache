@@ -1,28 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "sibyBDVnqGM=",
+  "dgSpecHash": "f4VjZwS9rb8=",
   "success": true,
   "projectFilePath": "D:\\threagile_converted\\convertisseur\\ThreagileConverter.Core\\ThreagileConverter.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.5\\microsoft.extensions.dependencyinjection.9.0.5.nupkg.sha512",
-    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.5\\microsoft.extensions.dependencyinjection.abstractions.9.0.5.nupkg.sha512",
-    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.logging\\9.0.5\\microsoft.extensions.logging.9.0.5.nupkg.sha512",
-    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.5\\microsoft.extensions.logging.abstractions.9.0.5.nupkg.sha512",
-    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.options\\9.0.5\\microsoft.extensions.options.9.0.5.nupkg.sha512",
-    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.5\\microsoft.extensions.primitives.9.0.5.nupkg.sha512",
-    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\system.xml.linq\\3.5.21022.801\\system.xml.linq.3.5.21022.801.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.configuration.binder\\8.0.0\\microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.logging.configuration\\8.0.0\\microsoft.extensions.logging.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.logging.console\\8.0.0\\microsoft.extensions.logging.console.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\8.0.0\\microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
     "C:\\Users\\Marcel ONYAGA\\.nuget\\packages\\yamldotnet\\16.3.0\\yamldotnet.16.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Le package 'System.Xml.Linq 3.5.21022.801' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net9.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
-      "libraryId": "System.Xml.Linq",
-      "targetGraphs": [
-        "net9.0"
-      ]
-    }
-  ]
+  "logs": []
 }

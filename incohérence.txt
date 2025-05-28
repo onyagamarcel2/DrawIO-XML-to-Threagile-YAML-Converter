@@ -1,0 +1,63 @@
+# Checklist des incohérences à résoudre
+
+## Implémentations manquantes
+- [x] Implémenter DrawIOStyle.Parse() dans DrawIOModels.cs
+- [x] Implémenter DrawIOShape.Parse() dans DrawIOModels.cs
+- [x] Implémenter DrawIORelation.Parse() dans DrawIOModels.cs
+
+## Programme CLI incomplet
+- [x] Compléter la logique de conversion dans Program.cs
+- [x] Ajouter le traitement des arguments de ligne de commande
+- [x] Implémenter le flux complet de conversion XML -> YAML
+
+## Tests incomplets
+- [x] Supprimer ou remplacer UnitTest1.cs par des tests réels
+- [x] Implémenter des tests unitaires pour les composants principaux
+- [x] Implémenter des tests d'intégration pour le flux complet
+
+## Classes inutilisées
+- [x] Supprimer ou remplacer Class1.cs dans le projet Core
+
+## Incohérence dans les interfaces
+- [x] Harmoniser IGenerator et IYamlGenerator (asynchrone vs synchrone)
+- [x] Clarifier les responsabilités de chaque interface
+
+## Documentation incorrecte
+- [x] Corriger la mention de ".NET 9 SDK" dans le README.md
+
+## Validation des entrées insuffisante
+- [x] Améliorer la validation des entrées XML dans DrawIOParser
+- [x] Ajouter des vérifications pour les fichiers XML malformés
+
+## Gestion des erreurs incomplète
+- [x] Implémenter un mécanisme cohérent de gestion des erreurs
+- [x] Ajouter des exceptions personnalisées pour chaque type d'erreur
+
+## Tests pour les cas limites manquants
+- [x] Ajouter des tests pour les fichiers vides
+- [x] Ajouter des tests pour les formats invalides
+- [ ] Ajouter des tests pour les cas limites (très grands fichiers, etc.)
+
+## Intégration entre composants
+- [x] Créer une classe de service qui connecte parser, mapper et générateur
+- [x] Implémenter un workflow complet de conversion
+
+## Incohérence dans le nommage
+- [x] Harmoniser les noms (anglais ou français) dans tout le code
+- [x] Standardiser les commentaires (anglais ou français)
+
+## Validation des modèles incomplète
+- [x] Compléter l'implémentation des méthodes de validation
+- [x] Ajouter des validations pour tous les types de données
+
+## Configuration des mappings
+- [ ] Externaliser les mappings dans un fichier de configuration
+- [ ] Permettre la personnalisation des mappings
+
+## Mécanisme de plugin manquant
+- [ ] Concevoir et implémenter un système de plugins
+- [ ] Permettre l'extension des fonctionnalités via des plugins
+
+## Support pour différentes versions
+- [ ] Ajouter un mécanisme pour gérer différentes versions de DrawIO
+- [ ] Ajouter un mécanisme pour gérer différentes versions de Threagile 

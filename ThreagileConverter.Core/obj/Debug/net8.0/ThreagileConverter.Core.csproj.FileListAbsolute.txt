@@ -1,0 +1,13 @@
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\obj\Debug\net8.0\ThreagileConverter.Core.csproj.AssemblyReference.cache
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\obj\Debug\net8.0\ThreagileConverter.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\obj\Debug\net8.0\ThreagileConverter.Core.AssemblyInfoInputs.cache
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\obj\Debug\net8.0\ThreagileConverter.Core.AssemblyInfo.cs
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\obj\Debug\net8.0\ThreagileConverter.Core.csproj.CoreCompileInputs.cache
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\obj\Debug\net8.0\ThreagileConverter.Core.sourcelink.json
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\bin\Debug\net8.0\ThreagileConverter.Core.deps.json
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\bin\Debug\net8.0\ThreagileConverter.Core.dll
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\bin\Debug\net8.0\ThreagileConverter.Core.pdb
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\obj\Debug\net8.0\ThreagileConverter.Core.dll
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\obj\Debug\net8.0\refint\ThreagileConverter.Core.dll
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\obj\Debug\net8.0\ThreagileConverter.Core.pdb
+D:\threagile_converted\convertisseur\ThreagileConverter.Core\obj\Debug\net8.0\ref\ThreagileConverter.Core.dll

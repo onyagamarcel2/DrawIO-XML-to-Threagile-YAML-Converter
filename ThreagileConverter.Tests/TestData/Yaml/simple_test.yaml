@@ -1,0 +1,234 @@
+﻿title: Simple Test
+description: ''
+version: 21.0.0
+author: ''
+technicalAssets:
+- id: 2
+  name: Web Application
+  title: ''
+  type: Unknown
+  description: Web Application
+  usage: ''
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    rounded: 1
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#dae8fc'
+    strokeColor: '#6c8ebf'
+- id: 3
+  name: Database
+  title: ''
+  type: Unknown
+  description: Database
+  usage: ''
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    shape: cylinder3
+    whiteSpace: wrap
+    html: 1
+    boundedLbl: 1
+    backgroundOutline: 1
+    size: 15
+    fillColor: '#f8cecc'
+    strokeColor: '#b85450'
+- id: 4
+  name: API Gateway
+  title: ''
+  type: Unknown
+  description: API Gateway
+  usage: ''
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#d5e8d4'
+    strokeColor: '#82b366'
+- id: 5
+  name: Backend Service
+  title: ''
+  type: Unknown
+  description: Backend Service
+  usage: ''
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  usedForDataProtection: false
+  usedForDataRetention: false
+  usedForDataDestruction: false
+  usedForDataArchiving: false
+  properties:
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
+    fillColor: '#fff2cc'
+    strokeColor: '#d6b656'
+trustBoundaries: []
+sharedRuntimes: []
+dataAssets: []
+communicationLinks:
+- id: 6
+  name: ''
+  title: ''
+  description: ''
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: 2
+  targetId: 3
+  source: ''
+  target: ''
+  type: Unknown
+  protocol: ''
+  authentication: ''
+  authorization: ''
+  encryption: ''
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 1
+    exitY: 0.5
+    exitDx: 0
+    exitDy: 0
+    entryX: 0
+    entryY: 0.5
+    entryDx: 0
+    entryDy: 0
+- id: 7
+  name: ''
+  title: ''
+  description: ''
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: 2
+  targetId: 4
+  source: ''
+  target: ''
+  type: Unknown
+  protocol: ''
+  authentication: ''
+  authorization: ''
+  encryption: ''
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 0.5
+    exitY: 1
+    exitDx: 0
+    exitDy: 0
+    entryX: 0.5
+    entryY: 0
+    entryDx: 0
+    entryDy: 0
+- id: 8
+  name: ''
+  title: ''
+  description: ''
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: 4
+  targetId: 5
+  source: ''
+  target: ''
+  type: Unknown
+  protocol: ''
+  authentication: ''
+  authorization: ''
+  encryption: ''
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 1
+    exitY: 0.5
+    exitDx: 0
+    exitDy: 0
+    entryX: 0
+    entryY: 0.5
+    entryDx: 0
+    entryDy: 0
+- id: 9
+  name: ''
+  title: ''
+  description: ''
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  sourceId: 5
+  targetId: 3
+  source: ''
+  target: ''
+  type: Unknown
+  protocol: ''
+  authentication: ''
+  authorization: ''
+  encryption: ''
+  properties:
+    endArrow: classic
+    html: 1
+    rounded: 0
+    exitX: 0.5
+    exitY: 0
+    exitDx: 0
+    exitDy: 0
+    entryX: 0.5
+    entryY: 1
+    entryDx: 0
+    entryDy: 0
+    entryPerimeter: 0
+styles: {}
+properties: {}
