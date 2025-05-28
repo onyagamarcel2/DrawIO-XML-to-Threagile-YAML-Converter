@@ -199,15 +199,19 @@ public class XmlParser
     /// <param name="doc">Le document XML à analyser</param>
     /// <param name="namespaceUri">L'URI du namespace</param>
     /// <returns>Le préfixe du namespace ou null si non trouvé</returns>
-    public string GetNamespacePrefix(XDocument doc, string namespaceUri)
+    public string? GetNamespacePrefix(XDocument doc, string namespaceUri)
     {
-        if (doc?.Root == null || string.IsNullOrEmpty(namespaceUri))
+        if (doc == null || string.IsNullOrEmpty(namespaceUri))
             return null;
 
-        var attr = doc.Root.Attributes()
+        var root = doc.Root;
+        if (root == null)
+            return null;
+
+        var attribute = root.Attributes()
             .FirstOrDefault(a => a.IsNamespaceDeclaration && a.Value == namespaceUri);
 
-        return attr?.Name.LocalName;
+        return attribute?.Name.LocalName;
     }
 
     /// <summary>
@@ -311,11 +315,8 @@ public class XmlParser
     /// <param name="reference">La référence à résoudre</param>
     /// <param name="basePath">Le chemin de base pour les références relatives</param>
     /// <returns>Le chemin absolu de la référence</returns>
-    public string ResolveExternalReference(ExternalReference reference, string basePath)
+    public string? ResolveExternalReference(ExternalReference reference, string basePath)
     {
-        if (reference == null || string.IsNullOrEmpty(basePath))
-            return null;
-
         try
         {
             switch (reference.ReferenceType)
@@ -431,7 +432,7 @@ public class XmlParser
     /// <param name="elementHandler">Fonction de traitement pour chaque élément</param>
     /// <param name="elementName">Nom de l'élément à traiter (null pour tous les éléments)</param>
     /// <returns>Une tâche représentant l'opération asynchrone</returns>
-    public async Task ProcessXmlStreamingAsync(string filePath, Func<XElement, Task> elementHandler, string elementName = null)
+    public async Task ProcessXmlStreamingAsync(string filePath, Func<XElement, Task> elementHandler, string? elementName = null)
     {
         try
         {

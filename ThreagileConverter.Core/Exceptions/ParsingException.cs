@@ -10,7 +10,7 @@ namespace ThreagileConverter.Core.Exceptions
         /// <summary>
         /// Gets the source file path that caused the parsing error
         /// </summary>
-        public string FilePath { get; }
+        public string? FilePath { get; }
 
         /// <summary>
         /// Gets the parsing error type

@@ -67,12 +67,12 @@ namespace ThreagileConverter.Core.Validation
         /// <summary>
         /// Gets the warning code
         /// </summary>
-        public string Code { get; }
+        public string? Code { get; }
 
         /// <summary>
         /// Gets the path of the element concerned
         /// </summary>
-        public string Path { get; }
+        public string? Path { get; }
 
         /// <summary>
         /// Creates a new instance of ValidationWarning
@@ -80,7 +80,7 @@ namespace ThreagileConverter.Core.Validation
         /// <param name="message">Warning message</param>
         /// <param name="code">Warning code</param>
         /// <param name="path">Path of the element concerned</param>
-        public ValidationWarning(string message, string code = null, string path = null)
+        public ValidationWarning(string message, string? code = null, string? path = null)
         {
             Message = message ?? throw new ArgumentNullException(nameof(message));
             Code = code;

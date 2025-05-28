@@ -30,6 +30,7 @@ public class XmlParserException : Exception
         ErrorType = (XmlParserErrorType)info.GetInt32(nameof(ErrorType));
     }
 
+    [Obsolete("This method is obsolete. Use the constructor that takes a SerializationInfo and StreamingContext instead.")]
     public override void GetObjectData(SerializationInfo info, StreamingContext context)
     {
         base.GetObjectData(info, context);

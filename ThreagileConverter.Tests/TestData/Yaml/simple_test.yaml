@@ -5,17 +5,20 @@ author: ''
 technicalAssets:
 - id: 2
   name: Web Application
-  title: ''
-  type: Unknown
+  title: Web Application
+  type: web-application
   description: Web Application
-  usage: ''
+  usage: business
   style:
-    fillColor: ''
-    strokeColor: ''
+    fillColor: '#dae8fc'
+    strokeColor: '#6c8ebf'
     fontColor: ''
     fontStyle: ''
     fontSize: 0
     shape: ''
+    rounded: 1
+    whiteSpace: wrap
+    html: 1
   usedForDataProtection: false
   usedForDataRetention: false
   usedForDataDestruction: false
@@ -26,19 +29,27 @@ technicalAssets:
     html: 1
     fillColor: '#dae8fc'
     strokeColor: '#6c8ebf'
+    confidentiality: medium
+    integrity: medium
+    availability: medium
 - id: 3
   name: Database
-  title: ''
-  type: Unknown
+  title: Database
+  type: database
   description: Database
-  usage: ''
+  usage: business
   style:
-    fillColor: ''
-    strokeColor: ''
+    fillColor: '#f8cecc'
+    strokeColor: '#b85450'
     fontColor: ''
     fontStyle: ''
     fontSize: 0
-    shape: ''
+    shape: cylinder3
+    whiteSpace: wrap
+    html: 1
+    boundedLbl: 1
+    backgroundOutline: 1
+    size: 15
   usedForDataProtection: false
   usedForDataRetention: false
   usedForDataDestruction: false
@@ -52,19 +63,24 @@ technicalAssets:
     size: 15
     fillColor: '#f8cecc'
     strokeColor: '#b85450'
+    confidentiality: medium
+    integrity: medium
+    availability: medium
 - id: 4
   name: API Gateway
-  title: ''
-  type: Unknown
+  title: API Gateway
+  type: gateway
   description: API Gateway
-  usage: ''
+  usage: business
   style:
-    fillColor: ''
-    strokeColor: ''
+    fillColor: '#d5e8d4'
+    strokeColor: '#82b366'
     fontColor: ''
     fontStyle: ''
     fontSize: 0
     shape: ''
+    whiteSpace: wrap
+    html: 1
   usedForDataProtection: false
   usedForDataRetention: false
   usedForDataDestruction: false
@@ -74,19 +90,25 @@ technicalAssets:
     html: 1
     fillColor: '#d5e8d4'
     strokeColor: '#82b366'
+    confidentiality: medium
+    integrity: medium
+    availability: medium
 - id: 5
   name: Backend Service
-  title: ''
-  type: Unknown
+  title: Backend Service
+  type: service
   description: Backend Service
-  usage: ''
+  usage: business
   style:
-    fillColor: ''
-    strokeColor: ''
+    fillColor: '#fff2cc'
+    strokeColor: '#d6b656'
     fontColor: ''
     fontStyle: ''
     fontSize: 0
     shape: ''
+    rounded: 0
+    whiteSpace: wrap
+    html: 1
   usedForDataProtection: false
   usedForDataRetention: false
   usedForDataDestruction: false
@@ -97,9 +119,49 @@ technicalAssets:
     html: 1
     fillColor: '#fff2cc'
     strokeColor: '#d6b656'
-trustBoundaries: []
+    confidentiality: medium
+    integrity: medium
+    availability: medium
+trustBoundaries:
+- id: default-boundary
+  title: Default Trust Boundary
+  name: Default Boundary
+  type: network-segment
+  description: Default trust boundary for unassigned assets
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  technicalAssets:
+  - 2
+  - 3
+  - 4
+  - 5
+  properties: {}
 sharedRuntimes: []
-dataAssets: []
+dataAssets:
+- id: data-3
+  name: Data in Database
+  description: Data stored in Database
+  type: business-data
+  usage: business
+  origin: internal
+  owner: business
+  quantity: many
+  confidentiality: medium
+  integrity: medium
+  availability: medium
+  style:
+    fillColor: ''
+    strokeColor: ''
+    fontColor: ''
+    fontStyle: ''
+    fontSize: 0
+    shape: ''
+  properties: {}
 communicationLinks:
 - id: 6
   name: ''
@@ -114,13 +176,13 @@ communicationLinks:
     shape: ''
   sourceId: 2
   targetId: 3
-  source: ''
-  target: ''
-  type: Unknown
-  protocol: ''
-  authentication: ''
-  authorization: ''
-  encryption: ''
+  source: 2
+  target: 3
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
   properties:
     endArrow: classic
     html: 1
@@ -146,13 +208,13 @@ communicationLinks:
     shape: ''
   sourceId: 2
   targetId: 4
-  source: ''
-  target: ''
-  type: Unknown
-  protocol: ''
-  authentication: ''
-  authorization: ''
-  encryption: ''
+  source: 2
+  target: 4
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
   properties:
     endArrow: classic
     html: 1
@@ -178,13 +240,13 @@ communicationLinks:
     shape: ''
   sourceId: 4
   targetId: 5
-  source: ''
-  target: ''
-  type: Unknown
-  protocol: ''
-  authentication: ''
-  authorization: ''
-  encryption: ''
+  source: 4
+  target: 5
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
   properties:
     endArrow: classic
     html: 1
@@ -210,13 +272,13 @@ communicationLinks:
     shape: ''
   sourceId: 5
   targetId: 3
-  source: ''
-  target: ''
-  type: Unknown
-  protocol: ''
-  authentication: ''
-  authorization: ''
-  encryption: ''
+  source: 5
+  target: 3
+  type: restful-api
+  protocol: https
+  authentication: none
+  authorization: none
+  encryption: none
   properties:
     endArrow: classic
     html: 1

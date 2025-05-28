@@ -65,7 +65,7 @@ namespace ThreagileConverter.Core.Events
             string targetPath,
             TimeSpan duration,
             int convertedElements,
-            IReadOnlyList<string> warnings = null)
+            IReadOnlyList<string>? warnings = null)
         {
             return new ConversionResult(
                 true,
@@ -83,7 +83,7 @@ namespace ThreagileConverter.Core.Events
             string sourcePath,
             string targetPath,
             TimeSpan duration,
-            IReadOnlyList<string> warnings = null)
+            IReadOnlyList<string>? warnings = null)
         {
             return new ConversionResult(
                 false,

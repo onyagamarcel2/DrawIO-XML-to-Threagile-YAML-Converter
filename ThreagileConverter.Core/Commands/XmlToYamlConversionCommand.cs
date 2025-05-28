@@ -32,6 +32,7 @@ namespace ThreagileConverter.Core.Commands
             _targetPath = targetPath ?? throw new ArgumentNullException(nameof(targetPath));
             _parserFactory = parserFactory ?? throw new ArgumentNullException(nameof(parserFactory));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _cancellationTokenSource = new CancellationTokenSource();
         }
 
         public async Task<ConversionResult> ExecuteAsync(IConversionObserver observer)

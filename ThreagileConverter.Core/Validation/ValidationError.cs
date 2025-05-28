@@ -20,7 +20,7 @@ public class ValidationError
     /// <summary>
     /// Identifiant de l'élément concerné
     /// </summary>
-    public string ElementId { get; }
+    public string? ElementId { get; }
 
     /// <summary>
     /// Détails supplémentaires de l'erreur
@@ -34,7 +34,7 @@ public class ValidationError
     /// <param name="severity">Niveau de sévérité</param>
     /// <param name="elementId">Identifiant de l'élément concerné</param>
     /// <param name="details">Détails supplémentaires de l'erreur</param>
-    public ValidationError(string message, ValidationSeverity severity, string elementId = null, string details = "")
+    public ValidationError(string message, ValidationSeverity severity, string? elementId = null, string? details = "")
     {
         Message = message ?? throw new ArgumentNullException(nameof(message));
         Severity = severity;

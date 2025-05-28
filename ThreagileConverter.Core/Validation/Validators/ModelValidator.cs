@@ -85,6 +85,8 @@ public class ModelValidator : IModelValidator
             }
         }
 
+        await Task.CompletedTask;
+
         if (errors.Any())
             return ValidationResult.CreateFailure(errors);
         else
